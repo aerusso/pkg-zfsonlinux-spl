@@ -60,6 +60,9 @@
 /* fops->fallocate() exists */
 #undef HAVE_INODE_FALLOCATE
 
+/* yes */
+#undef HAVE_INODE_LOCK_SHARED
+
 /* truncate_range() inode operation is available */
 #undef HAVE_INODE_TRUNCATE_RANGE
 
@@ -79,10 +82,19 @@
 #undef HAVE_MEMORY_H
 
 /* yes */
+#undef HAVE_MUTEX_OWNER
+
+/* yes */
 #undef HAVE_PDE_DATA
 
 /* __put_task_struct() is available */
 #undef HAVE_PUT_TASK_STRUCT
+
+/* struct rw_semaphore has member activity */
+#undef HAVE_RWSEM_ACTIVITY
+
+/* struct rw_semaphore has atomic_long_t member count */
+#undef HAVE_RWSEM_ATOMIC_LONG_COUNT
 
 /* linux/sched/rt.h exists */
 #undef HAVE_SCHED_RT_HEADER
