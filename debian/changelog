@@ -1,3 +1,17 @@
+spl-linux (0.6.5.8-1) unstable; urgency=medium
+
+  [ Petter Reinholdtsen ]
+  * Fix invalid command in dkms (Closes: #836578)
+
+  [ Zhou Mo ]
+  * control: bump standards version to 3.9.8
+
+  [ Aron Xu ]
+  * Imported Upstream version 0.6.5.8 (Closes: #835992)
+  * rules: allow parallel building
+
+ -- Aron Xu <aron@debian.org>  Sun, 18 Sep 2016 01:06:04 +0800
+
 spl-linux (0.6.5.7-1) unstable; urgency=medium
 
   * Imported Upstream version 0.6.5.7
