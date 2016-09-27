@@ -1,3 +1,20 @@
+spl-linux (0.6.5.8-2) unstable; urgency=medium
+
+  [ Petter Reinholdtsen ]
+  * Added d/gbp.conf to enforce the use of pristine-tar.
+  * Added extra autopkgtest script check.sh from the Ubuntu package.
+
+  [ Aron Xu ]
+  * Make use of dh-autoreconf
+  * Deal with /etc/hostid in postinst of spl package
+  * Add lintian-overrides: extra-license-file
+  * Simplify rules by merging Ubuntu one
+  * Handle the case /etc/hostid is being wrongly marked as conffile
+  * Install man pages for spl
+  * Move command-with-path-in-maintainer-script override to spl
+
+ -- Aron Xu <aron@debian.org>  Wed, 28 Sep 2016 05:02:06 +0800
+
 spl-linux (0.6.5.8-1) unstable; urgency=medium
 
   [ Petter Reinholdtsen ]
