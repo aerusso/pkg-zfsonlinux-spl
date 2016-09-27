@@ -21,6 +21,12 @@ set -e
 # If this file don't already exists on our system or has less than 4 bytes, then
 # we will stabilize our current hostid by writing its value to /etc/hostid
 
+# Detect if /etc/hostid is a conffile of previous spl package, migrate if yes
+# hostid file should preserve even when package is purged
+if $(dpkg-query --showformat='${Conffiles}\n' --show spl >/dev/null 2>&1); then
+	dpkg-maintscript-helper rm_conffile /etc/hostid -- "$@"
+fi
+
 if [ ! -f /etc/hostid ] || [ $(stat -c %s /etc/hostid) -lt 4 ] ; then
 
 	# Write our current hostid to /etc/hostid
@@ -31,7 +37,7 @@ if [ ! -f /etc/hostid ] || [ $(stat -c %s /etc/hostid) -lt 4 ] ; then
 	DD=$(echo $HOSTID | cut -b 7,8)
 
 	# Big Endian
-	if echo | gcc -E -dM - | grep -q "__BYTE_ORDER__.*__ORDER_BIG_ENDIAN__"; then
+	if [ $(echo -n I | od -to2 | awk 'FNR==1{ print substr($2,6,1)}' 2>/dev/null) = 0 ]; then
 		# Invoke the printf from coreutils. shell builtin lacks the byte format.
 		/usr/bin/printf "\x$AA\x$BB\x$CC\x$DD" >/etc/hostid
 	else
