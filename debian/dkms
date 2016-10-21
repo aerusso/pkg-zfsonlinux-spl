@@ -25,6 +25,7 @@ POST_BUILD="cp
   ${dkms_tree}/${PACKAGE_NAME}/${PACKAGE_VERSION}/build/module/Module.symvers
   ${dkms_tree}/${PACKAGE_NAME}/${PACKAGE_VERSION}/${kernelver}/${arch}/
 "
+[ -d "${dkms_tree}/${PACKAGE_NAME}/${PACKAGE_VERSION}/build" ] && POST_INSTALL=${POST_BUILD}
 REMAKE_INITRD="no"
 MAKE[0]="make"
 BUILT_MODULE_NAME[0]="spl"
