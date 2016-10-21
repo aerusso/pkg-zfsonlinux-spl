@@ -17,7 +17,7 @@ Vcs-Browser: http://anonscm.debian.org/gitweb/?p=pkg-zfsonlinux/spl.git
 
 Package: spl-dkms
 Architecture: all
-Depends: dkms (>> 2.1.1.2-5), file, libc-dev, lsb-release, ${misc:Depends}
+Depends: dkms (>> 2.2.1.0), file, libc-dev, lsb-release, ${misc:Depends}
 Recommends: spl (>= ${source:Upstream-Version})
 Provides: spl-modules
 Description: Solaris Porting Layer kernel modules for Linux
