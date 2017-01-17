@@ -1,3 +1,10 @@
+spl-linux (0.6.5.8-3) unstable; urgency=medium
+
+  * Fix Linux 4.9 compatibility (Closes: #851352)
+    Thanks to Fabian Grünbichler!
+
+ -- Aron Xu <aron@debian.org>  Tue, 17 Jan 2017 20:57:13 +0800
+
 spl-linux (0.6.5.8-2) unstable; urgency=medium
 
   [ Petter Reinholdtsen ]
