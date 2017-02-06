@@ -1,3 +1,9 @@
+spl-linux (0.6.5.9-1) unstable; urgency=medium
+
+  * Imported Upstream version 0.6.5.9
+
+ -- Aron Xu <aron@debian.org>  Mon, 06 Feb 2017 15:52:47 +0800
+
 spl-linux (0.6.5.8-3) unstable; urgency=medium
 
   * Fix Linux 4.9 compatibility (Closes: #851352)
