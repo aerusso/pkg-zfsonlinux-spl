@@ -1,3 +1,9 @@
+spl-linux (0.6.5.10-1) unstable; urgency=medium
+
+  * New upstream version 0.6.5.10
+
+ -- Aron Xu <aron@debian.org>  Wed, 05 Jul 2017 18:00:58 +0800
+
 spl-linux (0.6.5.9-1) unstable; urgency=medium
 
   * Imported Upstream version 0.6.5.9
