@@ -81,6 +81,9 @@
 /* struct kmem_cache has allocflags */
 #undef HAVE_KMEM_CACHE_ALLOCFLAGS
 
+/* kmem_cache_create_usercopy() exists */
+#undef HAVE_KMEM_CACHE_CREATE_USERCOPY
+
 /* struct kmem_cache has gfpflags */
 #undef HAVE_KMEM_CACHE_GFPFLAGS
 
@@ -89,9 +92,6 @@
 
 /* Define to 1 if you have the <memory.h> header file. */
 #undef HAVE_MEMORY_H
-
-/* yes */
-#undef HAVE_MUTEX_OWNER
 
 /* yes */
 #undef HAVE_PDE_DATA
@@ -143,6 +143,12 @@
 
 /* yes */
 #undef HAVE_WAIT_ON_BIT_ACTION
+
+/* wait_queue_entry_t exists */
+#undef HAVE_WAIT_QUEUE_ENTRY_T
+
+/* wq_head->head and wq_entry->entry exist */
+#undef HAVE_WAIT_QUEUE_HEAD_ENTRY
 
 /* Define to the sub-directory in which libtool stores uninstalled libraries.
    */
