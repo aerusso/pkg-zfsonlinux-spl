@@ -1004,22 +1004,30 @@ deb-local:
 	fi)
 
 deb-kmod: deb-local rpm-kmod
-@CONFIG_KERNEL_TRUE@	name=${PACKAGE}; \
-@CONFIG_KERNEL_TRUE@	version=${VERSION}-${RELEASE}; \
-@CONFIG_KERNEL_TRUE@	arch=`$(RPM) -qp $${name}-kmod-$${version}.src.rpm --qf %{arch} | tail -1`; \
-@CONFIG_KERNEL_TRUE@	pkg1=kmod-$${name}*$${version}.$${arch}.rpm; \
-@CONFIG_KERNEL_TRUE@	fakeroot $(ALIEN) --bump=0 --scripts --to-deb $$pkg1; \
-@CONFIG_KERNEL_TRUE@	$(RM) $$pkg1
+	name=${PACKAGE}; \
+	version=${VERSION}-${RELEASE}; \
+	arch=`$(RPM) -qp $${name}-kmod-$${version}.src.rpm --qf %{arch} | tail -1`; \
+	pkg1=kmod-$${name}*$${version}.$${arch}.rpm; \
+	fakeroot $(ALIEN) --bump=0 --scripts --to-deb $$pkg1; \
+	$(RM) $$pkg1
+
+deb-dkms: deb-local rpm-dkms
+	name=${PACKAGE}; \
+	version=${VERSION}-${RELEASE}; \
+	arch=`$(RPM) -qp $${name}-dkms-$${version}.src.rpm --qf %{arch} | tail -1`; \
+	pkg1=$${name}-dkms-$${version}.$${arch}.rpm; \
+	fakeroot $(ALIEN) --bump=0 --scripts --to-deb $$pkg1; \
+	$(RM) $$pkg1
 
 deb-utils: deb-local rpm-utils
-@CONFIG_USER_TRUE@	name=${PACKAGE}; \
-@CONFIG_USER_TRUE@	version=${VERSION}-${RELEASE}; \
-@CONFIG_USER_TRUE@	arch=`$(RPM) -qp $${name}-$${version}.src.rpm --qf %{arch} | tail -1`; \
-@CONFIG_USER_TRUE@	pkg1=$${name}-$${version}.$${arch}.rpm; \
-@CONFIG_USER_TRUE@	fakeroot $(ALIEN) --bump=0 --scripts --to-deb $$pkg1; \
-@CONFIG_USER_TRUE@	$(RM) $$pkg1
+	name=${PACKAGE}; \
+	version=${VERSION}-${RELEASE}; \
+	arch=`$(RPM) -qp $${name}-$${version}.src.rpm --qf %{arch} | tail -1`; \
+	pkg1=$${name}-$${version}.$${arch}.rpm; \
+	fakeroot $(ALIEN) --bump=0 --scripts --to-deb $$pkg1; \
+	$(RM) $$pkg1
 
-deb: deb-kmod deb-utils
+deb: deb-kmod deb-dkms deb-utils
 
 tgz-local:
 	@(if test "${HAVE_ALIEN}" = "no"; then \
@@ -1075,6 +1083,7 @@ etags:
 tags: ctags etags
 
 pkg: @DEFAULT_PACKAGE@
+pkg-dkms: @DEFAULT_PACKAGE@-dkms
 pkg-kmod: @DEFAULT_PACKAGE@-kmod
 pkg-utils: @DEFAULT_PACKAGE@-utils
 
