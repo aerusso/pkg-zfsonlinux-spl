@@ -78,6 +78,12 @@
 /* Define to 1 if you have the <inttypes.h> header file. */
 #undef HAVE_INTTYPES_H
 
+/* kernel_read() take loff_t pointer */
+#undef HAVE_KERNEL_READ_PPOS
+
+/* kernel_write() take loff_t pointer */
+#undef HAVE_KERNEL_WRITE_PPOS
+
 /* struct kmem_cache has allocflags */
 #undef HAVE_KMEM_CACHE_ALLOCFLAGS
 
