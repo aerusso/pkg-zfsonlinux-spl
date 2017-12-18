@@ -1,3 +1,10 @@
+spl-linux (0.7.4-1) unstable; urgency=medium
+
+  * New upstream version 0.7.4 (Closes: #883830)
+  * Update stdver to 4.1.2, no change required
+
+ -- Aron Xu <aron@debian.org>  Mon, 18 Dec 2017 22:05:32 +0800
+
 spl-linux (0.7.3-1) unstable; urgency=medium
 
   * New upstream version 0.7.3
