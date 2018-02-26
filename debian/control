@@ -24,6 +24,7 @@ Depends: dkms (>> 2.2.1.0),
          lsb-release,
          ${misc:Depends}
 Recommends: spl (>= ${source:Upstream-Version}),
+         linux-libc-dev (< 4.16)
 Provides: spl-modules
 Description: Solaris Porting Layer kernel modules for Linux
  The Solaris Porting Layer (SPL) is a Linux kernel module which provides
