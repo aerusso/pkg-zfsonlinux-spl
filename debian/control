@@ -17,8 +17,13 @@ Vcs-Browser: https://salsa.debian.org/zfsonlinux-team/spl
 
 Package: spl-dkms
 Architecture: all
-Depends: dkms (>> 2.2.1.0), file, libc-dev, libelf-dev, lsb-release, ${misc:Depends}
-Recommends: spl (>= ${source:Upstream-Version})
+Depends: dkms (>> 2.2.1.0),
+         file,
+         libc-dev,
+         libelf-dev,
+         lsb-release,
+         ${misc:Depends}
+Recommends: spl (>= ${source:Upstream-Version}),
 Provides: spl-modules
 Description: Solaris Porting Layer kernel modules for Linux
  The Solaris Porting Layer (SPL) is a Linux kernel module which provides
