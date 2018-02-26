@@ -11,10 +11,10 @@ Build-Depends: autotools-dev,
  libtool,
  linux-headers-_KVERS_-common,
  linux-headers-_KVERS_
-Standards-Version: 3.9.8
+Standards-Version: 4.1.2
 Homepage: http://www.zfsonlinux.org/
-Vcs-Git: git://anonscm.debian.org/pkg-zfsonlinux/spl.git
-Vcs-Browser: http://anonscm.debian.org/gitweb/?p=pkg-zfsonlinux/spl.git
+Vcs-Git: git@salsa.debian.org:zfsonlinux-team/spl.git
+Vcs-Browser: https://salsa.debian.org/zfsonlinux-team/spl.git
 
 Package: spl-modules-_KVERS_
 Architecture: _ARCH_

@@ -12,8 +12,8 @@ Build-Depends: autogen,
                libtool
 Standards-Version: 4.1.2
 Homepage: http://www.zfsonlinux.org/
-Vcs-Git: git://anonscm.debian.org/pkg-zfsonlinux/spl.git
-Vcs-Browser: http://anonscm.debian.org/gitweb/?p=pkg-zfsonlinux/spl.git
+Vcs-Git: git@salsa.debian.org:zfsonlinux-team/spl.git
+Vcs-Browser: https://salsa.debian.org/zfsonlinux-team/spl
 
 Package: spl-dkms
 Architecture: all
