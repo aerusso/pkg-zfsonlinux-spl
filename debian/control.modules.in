@@ -20,7 +20,7 @@ Package: spl-modules-_KVERS_
 Architecture: _ARCH_
 Provides: spl-modules
 Depends: linux-image-_KVERS_
-Recommends: spl (>= ${source:Upstream-Version})
+Suggests: spl (>= ${source:Upstream-Version})
 Description: Solaris Porting Layer kernel modules for Linux (kernel _KVERS_)
  The Solaris Porting Layer (SPL) is a Linux kernel module which provides
  many of the Solaris kernel APIs. This shim layer makes it possible to

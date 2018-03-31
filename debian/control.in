@@ -23,7 +23,7 @@ Depends: dkms (>> 2.2.1.0),
          libelf-dev,
          lsb-release,
          ${misc:Depends}
-Recommends: spl (>= ${source:Upstream-Version}),
+Suggests: spl (>= ${source:Upstream-Version}),
          @LINUX_COMPAT@
 Provides: spl-modules
 Description: Solaris Porting Layer kernel modules for Linux
